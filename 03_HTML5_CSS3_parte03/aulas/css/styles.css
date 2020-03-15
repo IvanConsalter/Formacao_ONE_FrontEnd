@@ -105,7 +105,7 @@ main .enviar {
 	width: 40%;
 	padding: 15px 0;
 	background-color: orange;
-	color: white;
+	color: #FFF;
 	font-weight: bold;
 	font-size: 18px;
 	border: none;
@@ -117,6 +117,21 @@ main .enviar {
 main .enviar:hover {
 	background-color: darkorange;
 	transform: scale(1.1);
+}
+
+main table {
+	margin: 20px 0 40px 40px;
+}
+
+main thead {
+	background-color: #555;
+	color: #FFF;
+	font-weight: bold; 
+}
+
+main th, td {
+	border: 1px solid #000;
+	padding: 8px 15px;
 }
 footer {
 	background-image: url(../images/bg.jpg);
