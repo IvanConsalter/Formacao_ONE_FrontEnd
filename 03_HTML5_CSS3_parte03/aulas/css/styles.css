@@ -84,18 +84,23 @@ main form {
 	margin: 40px;
 }
 
-main form label {
+main form label, form p {
 	display: block;
 	font-size: 20px;
 	margin: 0 0 10px;
 }
 
-main form input {
+main .input-padrao {
 	display: block;
 	margin: 0 0 20px;
 	padding: 10px 25px;
 	width: 50%;
 }
+
+main .checkbox {
+	margin: 20px 0;
+}
+
 footer {
 	background-image: url(../images/bg.jpg);
 	text-align: center;
