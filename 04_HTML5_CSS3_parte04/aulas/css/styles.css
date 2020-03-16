@@ -34,13 +34,6 @@ header nav a {
 	color: #000;
 }
 
-/*css index.html*/
-
-main {
-	color: red;
-}
-
-/*css produtos.html*/
 main .produtos {
 	width: 940px;
 	margin: 0 auto;
@@ -87,7 +80,6 @@ main .produto-preco {
 	margin-top: 10px;
 }
 
-/*css contato.html*/
 main form {
 	margin: 40px;
 }

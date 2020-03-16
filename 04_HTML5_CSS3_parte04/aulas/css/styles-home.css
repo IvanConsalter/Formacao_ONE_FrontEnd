@@ -1,0 +1,32 @@
+main .imagem-banner {
+	width: 100%;
+}
+
+main .titulo-principal {
+	text-align: center;
+	font-size: 2em;
+	margin: 0 0 1em;
+	clear: left;
+}
+
+main .principal p {
+	margin: 0 0 1em;
+}
+
+main .principal strong {
+	font-weight: bold;
+}
+
+main principal em {
+	font-style: italic;
+}
+
+main .utensilios {
+	width: 120px;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+main .imagem-beneficios {
+	width: 60%;
+}
