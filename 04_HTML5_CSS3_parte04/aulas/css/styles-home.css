@@ -69,8 +69,8 @@ main .lista-beneficios {
 	vertical-align: top;
 }
 
-main .iten:before {
-	content: "★";
+main .itens:before {
+	content: "★ ";
 }
 
 main .itens {
@@ -83,6 +83,15 @@ main .itens:first-child {
 
 main .imagem-beneficios {
 	width: 60%;
+	opacity: 0.8;
+	transition: 400ms;
+	box-shadow: 10px 10px 10px 0 #000;
+	float: right;
+	margin-bottom: 4em;
+}
+
+main .imagem-beneficios:hover {
+	opacity: 1;
 }
 
 main .video {
