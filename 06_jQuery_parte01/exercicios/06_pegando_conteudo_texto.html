@@ -1,0 +1,52 @@
+<!-- A programadora Ana está montando um site que tem como objetivo ser o template para a sua primeira página. O HTML do template está com essa cara:
+
+...
+<body>
+    <h1> Meu primeiro website! </h1>
+    <p>Olá, eu sou a <span id="nome">Ana</span> e estou aprendendo  o básico sobre desenvolvimento Web.</p>
+
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
+</body>
+E acompanha, além do jQuery, o seguinte Javascript:
+
+//main.js
+
+var nome = $("#nome");
+console.log("Seu nome é:" + nome );
+Ana gostaria que no console fosse exibido o nome que está no HTML, ficando assim: Seu nome é Ana
+
+Porém o resultado é :Seu nome é:[object Object]
+
+Qual alternativa abaixo corrige o erro de Ana ?
+
+Resposta:
+
+var nome = $("#nome").text();
+
+Se queremos ter acesso ao contéudo textual de um elemento selecionado pelo jQuery, devemos utilizar a função .text(), que nos retorna exatamente isto.
+
+Neste exemplo, Ana até selecionou corretamente o elemento, porém pecou tentando imprimir o elemento em si, e não seu texto. A alternativa que exibiria o resultado esperado é :
+
+var nome = $("#nome").text();
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pegando um conteudo de texto com jQuery</title>
+</head>
+<body>
+	
+	<h1> Meu primeiro website! </h1>
+	<p>Olá, eu sou a <span id="nome">Ana</span> e estou aprendendo  o básico sobre desenvolvimento Web.</p>
+
+	<script>
+		
+		var nome = $("#nome").text;
+		console.log("Seu nome é:" + nome );
+
+	</script>
+</body>
+</html> 
