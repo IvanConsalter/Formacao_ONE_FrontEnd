@@ -1,0 +1,52 @@
+<!-- Paulo estava desenvolvendo um blog de notícias colaborativo, e ao montar a parte de postagem de notícias do site ele resolveu criar um contador de caracteres, para limitar o tamanho das notícias.
+
+<body>
+    <textarea class="corpo-noticia" cols="40" rows="5"></textarea>
+    <p>Caracteres: <span id="numero-caracteres">0</span> caracteres.</p>
+    <script src="jquery.js"></script>
+    <script src="contador.js"></script>
+</body>
+//contador.js
+
+function atualizaCaracteres(){
+    var noticia = $(".corpo-noticia").val();
+    var caracteres = noticia.length;
+
+    var contador = $("#numero-caracteres");
+    contador.text(caracteres);
+}
+A função atualizaCaracteres de Paulo está correta, porém ele só consegue chamá-la através do terminal. Qual código abaixo ele pode adicionar ao seu contador.js para que o número de caracteres seja atualizado conforme o usuário de seu blog escreve a notícia?
+
+Resposta:
+
+$(".corpo-noticia").on("input",atualizaCaracteres);
+
+A função .on() recebe dois parâmetros, o nome do evento a escutar e uma função com a ação que deve executar!
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Atualiza Caractere</title>
+</head>
+
+	<body>
+		<textarea class="corpo-noticia" cols="40" rows="5"></textarea>
+		<p>Caracteres: <span id="numero-caracteres">0</span> caracteres.</p>
+		<script src="js/jquery.js"></script>
+		<script>
+			
+			function atualizaCaracteres(){
+				var noticia = $(".corpo-noticia").val();
+				var caracteres = noticia.length;
+
+				var contador = $("#numero-caracteres");
+				contador.text(caracteres);
+			}
+
+				$(".corpo-noticia").on("input",atualizaCaracteres);
+				
+		</script>
+	</body>
+</html>
