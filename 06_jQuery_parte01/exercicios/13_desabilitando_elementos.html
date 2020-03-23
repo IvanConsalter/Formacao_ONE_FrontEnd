@@ -1,0 +1,94 @@
+<!-- Temos o seguinte formulário, no qual é pedido para o usuário preencher o nome da sua mãe OU do seu pai:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Nome de um dos seus pais</legend>
+
+            <label for="nome-mae">Nome da Mãe:</label>
+            <input id="nome-mae" type="text">
+
+            <label for="nome-pai">Nome do Pai:</label>
+            <input id="nome-pai" type="text">
+        </fieldset>
+    </form>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+Como só um dos nomes é necessário, quando começarmos a digitar em um input, o outro deve ficar desabilitado, e podemos fazer isso com o JavaScript e jQuery. Qual das opções abaixo atende corretamente à exigência acima?
+
+Resposta:
+
+var mae = $("#nome-mae");
+var pai = $("#nome-pai");
+
+mae.on("input", function() {
+    pai.attr("disabled", true);
+});
+
+pai.on("input", function() {
+    mae.attr("disabled", true);
+});
+
+Como vimos no capítulo, para colocar o atributo disabled em um elemento, nós utilizamos a função attr. Mas como ele não recebe nenhum valor, temos que informar isso, "habilitando-o" na função, passando o valor true (verdadeiro) por parâmetro.
+
+Como queremos que o input do nome do pai seja desabilitado caso haja algo digitado no input do nome da mãe, e vice-versa, escutamos o evento input. Logo, a opção correta é:
+
+var mae = $("#nome-mae");
+var pai = $("#nome-pai");
+
+mae.on("input", function() {
+    pai.attr("disabled", true);
+});
+
+pai.on("input", function() {
+    mae.attr("disabled", true);
+});
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Desabilitando elementos com jQuery</title>
+</head>
+
+<body>
+
+	<form>
+		<fieldset>
+			<legend>Nome de um dos seus pais</legend>
+
+			<label for="nome-mae">Nome da Mãe:</label>
+			<input id="nome-mae" type="text">
+
+			<label for="nome-pai">Nome do Pai:</label>
+			<input id="nome-pai" type="text">
+		</fieldset>
+	</form>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		var mae = $("#nome-mae");
+		var pai = $("#nome-pai");
+
+		mae.on("input", function() {
+			pai.attr("disabled", true);
+		});
+
+		pai.on("input", function() {
+			mae.attr("disabled", true);
+		});
+	</script>
+</body>
+</html>
