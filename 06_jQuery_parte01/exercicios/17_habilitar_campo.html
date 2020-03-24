@@ -1,0 +1,42 @@
+<!-- Qual código abaixo habilita o campo de texto para edição?
+
+<textarea disabled id="post">Aqui tem um conteúdo criativo</textarea>
+
+Resposta:
+
+$("#post").attr("disabled", false);
+
+A função attr pode habilitar, desabilitar ou editar o valor de um atributo, mas precisamos passar um segundo parâmetro.
+
+Se queremos tirar o atributo disabled, podemos passar o segundo atributo como false, ficando:
+
+$("#post").attr("disabled", false);
+Assim, a função .attr() vai se comportar como uma outra função do jQuery, a .removeAttr(), que tem como objetivo remover atributos de elementos. Um outro código que também conseguiria remover o attr seria o :
+
+$("#post").removeAttr("disabled");
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Habilitando um campo de texto</title>
+	</head>
+
+	<body>
+		
+		<textarea disabled id="post">Aqui tem um conteúdo criativo</textarea>
+
+		<button>Ativar Campo</button>
+
+		<script src="js/jquery.js"></script>
+		<script>
+
+			$('button').on('click', function(){
+
+				$("#post").attr("disabled", false);				
+			});
+			
+		</script>
+	</body>
+</html>

@@ -1,12 +1,28 @@
-var frase = $('#frase').text();
-var numPalavras = frase.split(' ').length;
-
-var tamanhoFrase = $('#tamanho-frase');
-tamanhoFrase.text(numPalavras);
+var tempoInicial = $('#tempo-digitacao').text();
 
 var campo = $('#campo-digitacao');
 
-campo.on('input', function(){
+$(function(){
+
+	atualizaTamanhoFrase();
+	inicializaContadores();
+	inicializaCronometro();
+	$('#botao-reiniciar').click(reiniciaJogo);
+
+});
+
+function atualizaTamanhoFrase(){
+
+	var frase = $('#frase').text();
+	var numPalavras = frase.split(' ').length;
+
+	var tamanhoFrase = $('#tamanho-frase');
+	tamanhoFrase.text(numPalavras);
+}
+
+function inicializaContadores(){
+
+	campo.on('input', function(){
 
 	var conteudo = campo.val();
 
@@ -18,20 +34,46 @@ campo.on('input', function(){
 	//var qtdCaracteres = conteudo.length;
 	var qtdCaracteres = conteudoSemEspaco.length;
 	$('#contador-caracteres').text(qtdCaracteres);
-});
+	});
 
-var tempoRestante = $('#tempo-digitacao').text();
+}
 
-campo.one('focus', function(){
+function inicializaCronometro(){
 
-	var cronometroId = setInterval(function(){
+	var tempoRestante = $('#tempo-digitacao').text();
 
-		tempoRestante--;
+	campo.one('focus', function(){
 
-		$('#tempo-digitacao').text(tempoRestante);
-		if(tempoRestante < 1){
-			campo.attr('disabled', true);
-			clearInterval(cronometroId);
-		}
-	}, 1000);
-});
+		$('#botao-reiniciar').attr('disabled', true);
+		var cronometroId = setInterval(function(){
+
+			tempoRestante--;
+
+			$('#tempo-digitacao').text(tempoRestante);
+			if(tempoRestante < 1){
+				campo.attr('disabled', true);
+				clearInterval(cronometroId);
+				$('#botao-reiniciar').attr('disabled', false);
+			}
+		}, 1000);
+	});
+
+}
+
+function reiniciaJogo(){
+
+	campo.attr('disabled', false);
+	campo.val('');
+	$('#contador-palavras').text('0');
+	$('#contador-caracteres').text('0');
+
+	$('#tempo-digitacao').text(tempoInicial);
+	inicializaCronometro();
+
+}
+
+
+
+
+
+
