@@ -1,0 +1,77 @@
+<!-- 
+Vimos no video que podemos facilmente adicionar e remover uma classe com jQuery:
+
+Ao selecionar um elemento:
+
+var campo = $(".campo-digitacao");
+Podemos adicionar a classe desejada através da função .addClass, por exemplo:
+
+campo.addClass("campo-desativado");
+Também podemos remover uma classe:
+
+campo.removeClass("campo-desativado");
+Há casos que queremos adicionar uma classe se não existe, e remover se já existe. Qual função devemos utilizar?
+
+Resposta:
+
+toggleClass
+
+A função correta é toggleClass por exemplo:
+
+var campo = $(".campo-digitacao");
+campo.toggleClass("campo-desativado");
+Essa função toggleClass também pode receber um segundo parâmetro que define se quisermos adicionar ou remover a classe:
+
+campo.toggleClass("campo-desativado", true); //sempre adiciona
+No vídeo você já viu que adicionamos uma borda verde ou vermelha, dependendo se o usuário acertou ou erro:
+
+if(digitado == comparavel) {
+    campo.addClass("borda-verde");
+    campo.removeClass("borda-vermelha");
+} else {
+    campo.addClass("borda-vermelha");
+    campo.removeClass("borda-verde");
+}
+Podemos reescrever esse código sem if, apenas usando o toggleClass. Repare o segundo parâmetro:
+
+var ehCorreto = (digitado == comparavel);
+
+campo.toggleClass("borda-verde", ehCorreto);
+campo.toggleClass("borda-vermelha", !ehCorreto);
+O código fica mais enxuto mas talvez menos legível. De qualquer forma, no curso continuaremos com o if!
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Adicionando e Removendo um classe no jQuery</title>
+
+		<style>
+			textarea {
+				border: 5px solid #F00;
+			}
+
+			.campo-verde {
+				border: 5px solid #0F0;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<textarea cols="30" rows="10" id="campo-digitacao"></textarea>
+		<button id="btn-campo">Ativar</button>
+
+		<script src="js/jquery.js"></script>
+		<script>
+			
+			var campo = $('#campo-digitacao');
+
+			$('#btn-campo').click(function(){
+
+				campo.toggleClass('campo-verde');
+			});
+		</script>
+	</body>
+</html>

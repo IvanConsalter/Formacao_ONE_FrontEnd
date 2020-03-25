@@ -1,0 +1,42 @@
+<!-- Dado a tag div a seguir:
+
+<div style="background-color:red; width=60px">CSS com jQuery</div>
+Como podemos recuperar o valor de uma propriedade background-color com jQuery? 
+
+Resposta:
+
+var cor = $("div").css("background-color");
+
+Devemos usar a função css() do jQuery que recebe o nome da propriedade:
+
+var cor = $("div").css("background-color");
+Também é possivel recuperar mais de um valor passando um array de propriedades, por exemplo:
+
+var valores = $("div").css(["background-color","width"]);
+O resultado é um objeto que possui todos os valores. Por exemplo para acessar o width podemos escrever:
+
+valores.width
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Alterando CSS com jQuery</title>
+	</head>
+
+	<body>
+		
+		<div style="background-color:red; width=60px">
+			CSS com jQuery
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script>
+			var cor = $("div");
+			cor.css('background-color', 'blue');
+		</script>
+	</body>
+</html>
