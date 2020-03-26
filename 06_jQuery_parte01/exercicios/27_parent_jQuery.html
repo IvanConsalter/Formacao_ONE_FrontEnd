@@ -1,0 +1,69 @@
+<!-- Jéssica criou um sistema web aonde ela marca com vermelho em uma tabela quais clientes de sua loja lhe trouxeram problemas, para que ela evite fechar pedidos com eles novamente.
+
+Dado o HTML abaixo e com o seu conhecimento de jQuery, como ela poderia navegar do elemento em negrito para o <tr> com classe linha?
+
+<table> 
+    <tr class="linha">
+        <td>José Carlos</td>
+        <td>Rua dos Santos, 123</td>
+        <td>Clique <a href="#"><strong>aqui</strong></a> para marcar a linha.</td>
+    </tr>
+</table>
+
+Resposta:
+
+$("strong").parent().parent().parent();
+
+A função .parent() tem como objetivo navegar pela árvore de elementos do HTML. Ela por padrão retorna o pai do elemento em que foi chamada, logo no caso abaixo:
+
+<div>
+    <h1>Olá</h1>
+</div>
+O pedaço de código $("h1").parent(); nos retorna a div, já que ela é o pai do h1. Podemos encadear várias chamadas a .parent() para buscar elementos mais acima, como no seguinte:
+
+<section>
+    <div>
+        <h1>Olá</h1>
+    </div>
+</section>
+O código $("h1").parent().parent(); nos retornaria a section, que é como se fosse o avô do <h1>.
+
+Como curiosidade , a função .parent() também pode receber um seletor como argumento. Deste modo, ela irá procurar nos pais do elemento por alguém com o seletor especificado, por exemplo:
+
+<section>
+    <div>
+        <h1>Olá</h1>
+    </div>
+    <div class="segunda">
+        <h1>Mundo</h1>
+    </div>
+</section>
+O código $("h1").parent(".segunda"); seleciona todos os h1s da página, e busca em cada um deles por um pai com a classe segunda. Neste caso, retornando apenas a div inferior.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Navegando ate os Pais com .parent()</title>
+	</head>
+
+	<body>
+		
+		<table> 
+    <tr class="linha">
+        <td>José Carlos</td>
+        <td>Rua dos Santos, 123</td>
+        <td>Clique <a href="#"><strong>aqui</strong></a> para marcar a linha.</td>
+    </tr>
+</table>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		var pai = $("strong").parent().parent().parent();
+
+		console.log(pai);
+	</script>
+	</body>
+</html>

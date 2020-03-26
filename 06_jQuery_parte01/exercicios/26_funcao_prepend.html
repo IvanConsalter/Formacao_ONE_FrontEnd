@@ -1,0 +1,38 @@
+<!-- Rafaela estava criando um pequeno webapp de compras, aonde os itens do topo da lista são a prioridade:
+
+<ol class="lista-compras">
+    <li>Curso da Alura</li>
+    <li>Bolsa de couro</li>
+    <li>Sapatilha preta</li>
+</ol>
+Qual código abaixo adiciona um novo item no topo da lista, como prioridade?
+
+Resposta:
+
+$(".lista-compras").prepend("<li>Celular</li>");
+
+O comando que adiciona um novo elemento como primeiro filho é o prepend(). Ele recebe um elemento HTML ou uma string e adiciona-o como um filho, antes dos filhos que ele já possuía.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Funcao prepend</title>
+</head>
+
+<body>
+	
+	<ol class="lista-compras">
+		<li>Curso da Alura</li>
+		<li>Bolsa de couro</li>
+		<li>Sapatilha preta</li>
+	</ol>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		$(".lista-compras").prepend("<li>Celular</li>");
+	</script>
+</body>
+</html>

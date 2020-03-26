@@ -1,0 +1,54 @@
+<!-- Quais dos código abaixo deleta apenas a div com classe vermelha do HTML ?
+
+<div class="azul">
+    <h1> Sou a div azul!</h1>
+</div>
+<div class="vermelha">
+    <h1> Sou a div vermelha!</h1>
+</div>
+<div class="verde">
+    <h1> Sou a div verde!</h1>
+</div>
+
+Resposta:
+
+$(".vermelha").remove();
+
+$("h1").parent(".vermelha").remove();
+
+A função .remove() , serve pare remover um elemento do HTML, como o próprio nome indica. Tome cuidado ao usá-la , pois o elemento é realmente removido e não apenas escondido, que é o caso quando usamos a função .hide().
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Removendo um parent</title>
+</head>
+
+<body>
+
+	<div class="azul" style="background: blue;">
+		<h1> Sou a div azul!</h1>
+	</div>
+	<div class="vermelha" style="background: red;">
+		<h1> Sou a div vermelha!</h1>
+	</div>
+	<div class="verde" style="background: green;">
+		<h1> Sou a div verde!</h1>
+	</div>
+
+	<button>Clique-me</button>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		$('button').click(function(){
+
+			//$(".vermelha").remove();
+			$("h1").parent(".vermelha").remove();
+		});
+		
+	</script>
+</body>
+</html>

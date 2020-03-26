@@ -1,0 +1,70 @@
+<!-- Agora que Jéssica já sabe como navegar até o elemento da <tr>, qual dos códigos jQuery abaixo consegue detectar um clique no elemento em * negrito** da página, navegar até a <tr> com a classe *linha e deixar seu fundo vermelho ?
+
+<table> 
+    <tr class="linha">
+        <td>José Carlos</td>
+        <td>Rua dos Santos, 123</td>
+        <td>Clique <a href="#"><strong>aqui</strong></a> para marcar a linha.</td>
+    </tr>
+</table>
+
+Resposta:
+
+$("strong").click(function(){
+    $(this).parent().parent().parent().css("background-color","red");
+});
+
+Este é um ótimo exercício de revisão de muitas coisas que aprendemos neste módulo.
+
+O primeiro ponto é que queremos partir do elemento , então vamos selecioná-lo com a função jQuery:
+
+$("strong");
+Depois, vamos adicionar um evento de click no mesmo com a função .click:
+
+$("strong").click(function(){
+
+});
+Queremos navegar do elemento clicado até um elemento pai, mas para isto precisamos transformar a tag HTML clicada em um objeto jQuery envolvendo o this:
+
+$("strong").click(function(){
+ $(this)
+});
+Vamos utilizar a função .parent para navegar três níveis acima da árvore, encadeando as chamadas:
+
+$("strong").click(function(){
+ $(this).parent().parent().parent();
+});
+Agora basta alterar a cor de fundo da linha com a função .css():
+
+$("strong").click(function(){
+ $(this).parent().parent().parent().css("background-color","red");
+});
+E nossa cor será alterada com sucesso ao clicarmos no negrito :)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mudando a cor de um parent</title>
+</head>
+
+<body>
+	
+	<table> 
+		<tr class="linha">
+			<td>José Carlos</td>
+			<td>Rua dos Santos, 123</td>
+			<td>Clique <a href="#"><strong>aqui</strong></a> para marcar a linha.</td>
+		</tr>
+	</table>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		$("strong").click(function(){
+			$(this).parent().parent().parent().css("background-color","red");
+		});
+	</script>
+</body>
+</html>

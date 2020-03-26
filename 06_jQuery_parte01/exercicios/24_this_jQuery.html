@@ -1,0 +1,44 @@
+<!-- Dado o seguinte HTML:
+
+<p id="descricao">jQuery - write less, do more</p>
+e este código Javascript(com jQuery importado previamente):
+
+$('#descricao').click(function() {
+    //AQUI
+});
+Como podemos selecionar o texto do parágrafo no lugar de //AQUI com jQuery?
+
+Resposta:
+
+var texto = $(this).text();
+
+Temos que lembrar que dentro de um evento do Javascript e do jQuery, a palavra reservada this sempre se refere ao elemento que sofreu o evento, neste caso ao elemento clicado. Como o elemento clicado é um elemento do HTML, ele se torna um objeto tradicional do Javascript dentro de nosso código. E como já sabemos, a função .text() é exclusiva de objetos jQuery, logo temos de convertê-lo antes.
+
+Para converter um objeto tradicional do Javascript em um objeto jQuery, devemos fazer uso da função jQuery, passando o this para ela, deste modo:
+
+ var texto = $(this).text();
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>palavra this no jQuery</title>
+</head>
+
+<body>
+
+	<p id="descricao">jQuery - write less, do more</p>
+
+	<script src="js/jquery.js"></script>
+	<script>
+
+		$('#descricao').click(function() {
+			var texto = $(this).text();
+			console.log(texto);
+		});
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!-- Silvio possui a seguinte tabela HTML com os seus gastos no mês:
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody id="gastos">
+        <tr>
+            <td>Contas</td>
+            <td>R$300</td>
+        </tr>
+        <tr>
+            <td>Lazer</td>
+            <td>R$260</td>
+        </tr>
+        <tr>
+            <td>Transporte</td>
+            <td>R$200</td>
+        </tr>
+    </tbody>
+</table>
+Só que Silvio notou que também gastou R$50 com guloseimas, então ele resolveu utilizar o jQuery para adicionar essa nova categoria no fim da tabela. Ele até já criou uma variável com a nova linha:
+
+var linha = "<tr>"+
+                "<td>Guloseimas</td>"+
+                "<td>R$50</td>"+
+            "</tr>";
+Mas Silvio não sabe como adicionar essa categoria como a última linha da tabela. Utilizando o seu conhecimento de jQuery, qual das opções abaixo resolveria perfeitamente o problema de Silvio?
+
+Resposta:
+
+$("#gastos").append(linha);
+
+A função que adiciona um novo elemento como último filho é a append. Ela recebe um elemento HTML ou uma string e adiciona-o como um filho, depois dos filhos que ele já possuía.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Adicionando uma nova linha na tabela</title>
+</head>
+
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Categoria</th>
+				<th>Valor</th>
+			</tr>
+		</thead>
+		<tbody id="gastos">
+			<tr>
+				<td>Contas</td>
+				<td>R$300</td>
+			</tr>
+			<tr>
+				<td>Lazer</td>
+				<td>R$260</td>
+			</tr>
+			<tr>
+				<td>Transporte</td>
+				<td>R$200</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		var linha = "<tr>"+
+                "<td>Guloseimas</td>"+
+                "<td>R$50</td>"+
+            "</tr>";
+
+        $('#gastos').append(linha);
+	</script>
+</body>
+</html>
