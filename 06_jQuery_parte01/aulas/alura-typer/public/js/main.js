@@ -25,7 +25,7 @@ function inicializaContadores(){
 
 	campo.on('input', function(){
 
-	var conteudo = campo.val();
+		var conteudo = campo.val();
 
 	//Retira os espaços da String
 	var conteudoSemEspaco = conteudo.replace(/\s+/g, '');
@@ -35,7 +35,7 @@ function inicializaContadores(){
 	//var qtdCaracteres = conteudo.length;
 	var qtdCaracteres = conteudoSemEspaco.length;
 	$('#contador-caracteres').text(qtdCaracteres);
-	});
+});
 
 }
 
@@ -52,10 +52,12 @@ function inicializaCronometro(){
 
 			$('#tempo-digitacao').text(tempoRestante);
 			if(tempoRestante < 1){
-				campo.attr('disabled', true);
+				
 				clearInterval(cronometroId);
-				$('#botao-reiniciar').attr('disabled', false);
+				campo.attr('disabled', true);
 				campo.toggleClass('campo-desativado');
+				inserePlacar();
+				
 			}
 		}, 1000);
 	});
@@ -73,7 +75,7 @@ function reiniciaJogo(){
 	inicializaCronometro();
 	campo.toggleClass('campo-desativado');
 	campo.removeClass('borda-vermelha');
-	compo.removeClass('borda-verde');
+	campo.removeClass('borda-verde');
 
 }
 
@@ -93,6 +95,30 @@ function inicializaMarcadores(){
 			campo.removeClass('borda-verde');
 		}
 	});
+}
+
+function novaLinha(usuario, numPalavras){
+
+	var linha = $('<tr>');
+	var colunaUsuario = $('<td>').text(usuario);
+	var colunaPalavras = $('<td>').text(numPalavras);
+
+	linha.append(colunaUsuario);
+	linha.append(colunaPalavras);
+
+	return linha;
+
+}
+
+function inserePlacar(){
+
+	var corpoTabela = $('#placar').find('tbody');
+	var usuario = 'nome';
+	var numPalavras = $('#contador-palavras').text();
+
+	var linha = novaLinha(usuario, numPalavras);
+
+	corpoTabela.append(linha);
 }
 
 
