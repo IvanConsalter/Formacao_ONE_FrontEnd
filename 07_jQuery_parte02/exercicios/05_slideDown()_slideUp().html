@@ -1,0 +1,65 @@
+<!-- João está montando um menu de dropdown em seu site de receitas, aonde ele exibe as opções do menu quando o usuário coloca o mouse sobre o mesmo, e esconde assim que ele tira o mouse. Ele está se aproveitando dos eventos de mouseenter e de mouseleave para diagnosticar quando o usuário está com o mouse sobre o título do menu ou não. Este é o código de seu menu:
+
+<h1 id="dropdown">Menu</h1>
+<ul style="display: none;" id="opcoes">
+    <li>Massas</li>
+    <li>Carnes</li>
+    <li>Saladas e Vegetais</li>
+</ul>
+E o JS que controla a animação:
+
+$("#dropdown").mouseenter(function() {
+    $("#opcoes").slideDown();
+});
+
+$("#dropdown").mouseleave(function() {
+    $("#opcoes").slideUp();
+});
+O menu de João funciona corretamente, porém quando o usuário passa várias vezes em um curto espaço de tempo com o mouse sobre o Menu, ele fica subindo e descendo continuamente, pois os eventos de abrir e fechar o menu são acionados diversas vezes. João gostaria que o menu dele só respondesse a última iteração com o usuário e que o menu não apresentasse este efeito de ioiô quando o usuário não está interagindo com ele.
+
+Qual código abaixo ajuda o João a melhorar seu menu ?
+
+Resposta:
+
+$("#dropdown").mouseenter(function() {
+    $("#opcoes").stop().slideToggle();
+});
+
+$("#dropdown").mouseleave(function() {
+    $("#opcoes").stop().slideToggle();
+});
+
+A função .stop() serve para interromper uma animação antes de começar a próxima. Quando utilizamos a chamada de .stop() antes de invocar o proxímo .slideUp/Down , fazemos com que a animação anterior seja interrompida antes de dar início a próxima, o que impede que várias animações fiquem encadeadas uma nas outras e crie um menu que fica subindo e descendo constantemente caso o usuário acione repetidas vezes os eventos.
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>.stop() .slideDown() .slideUp()</title>
+</head>
+
+<body>
+	
+	<h1 id="dropdown">Menu</h1>
+	<ul style="display: none;" id="opcoes">
+		<li>Massas</li>
+		<li>Carnes</li>
+		<li>Saladas e Vegetais</li>
+	</ul>
+
+	<script src="js/jquery.js"></script>
+
+	<script>
+		
+		$("#dropdown").mouseenter(function() {
+			$("#opcoes").stop().slideToggle();
+		});
+
+		$("#dropdown").mouseleave(function() {
+			$("#opcoes").stop().slideToggle();
+		});
+	</script>
+</body>
+</html>

@@ -52,4 +52,18 @@ function inserePlacar(){
 
 	linha.find('.botao-remover').click(removeLinha);
 	corpoTabela.append(linha);
+
+	$('#placar').slideDown(600);
+	scrollPLacar();
+}
+
+function scrollPLacar(){
+
+	var posicaoPLacar = $('#placar').offset().top;
+
+	$('body').animate(
+	{
+
+		scrollTop: posicaoPLacar + 'px'
+	}, 1000);
 }
