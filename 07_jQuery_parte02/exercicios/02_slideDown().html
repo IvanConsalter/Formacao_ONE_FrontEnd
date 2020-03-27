@@ -1,0 +1,60 @@
+<!-- Suzana criou um código HTML para exibir uma lista de funcionários do mês. Quando a página é carregada, ela deve estar escondida e quando um botão for clicado, ela deve ser exibida lentamente de cima para baixo, para dar aquele ar de suspense. Com certeza se ela fosse exibida totalmente assim que o botão fosse clicado não haveria mistério.
+
+Segue o HTML:
+
+  <button id="botao">Clique para saber os funcionários do mês!</button>
+  <ul class="funcionarios invisivel">
+    <li>Douglas Quintanilha</li>
+    <li>Flávio Almeida</li>
+    <li>Hugo Roque</li>
+  </ul>
+  <script="jquery.js">
+A lista já começa escondida devido à presença da classe invisivel. Segue a definição da classe:
+
+.invisivel {
+  display: none;
+}
+Qual das opções abaixo implementa corretamente o efeito de exibição procurado por Suzana?
+
+Resposta:
+
+$('#botao').click(function() {
+
+    $('.funcionarios').slideDown(2000);
+});
+
+Veja que podemos melhorar a experiência do usuário através das funções do jQuery com pouquíssimo esforço.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Escondendo com slideDown()</title>
+
+	<style>
+		.invisivel {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<button id="botao">Clique para saber os funcionários do mês!</button>
+	<ul class="funcionarios invisivel">
+		<li>Douglas Quintanilha</li>
+		<li>Flávio Almeida</li>
+		<li>Hugo Roque</li>
+	</ul>
+	<script src="js/jquery.js"></script>
+	<script>
+
+		$('#botao').click(function() {
+
+			$('.funcionarios').slideDown(2000);
+		});
+
+	</script>
+</body>
+</html>
