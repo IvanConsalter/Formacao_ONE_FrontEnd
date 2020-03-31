@@ -1,0 +1,75 @@
+<!-- Temos o seguinte HTML:
+
+<ul>
+    <li>A</li>
+    <li>B</li>    
+    <li>C</li>
+</ul>
+Qual das opções abaixo seleciona todas as li's com $('li') e itera por cada uma delas imprimindo seu conteúdo no console usando $.each?
+
+Resposta:
+
+
+$('li').each(function() {
+    var texto = $(this).text();
+    console.log(texto);
+});
+
+
+É possível usar o each do jQuery para iterarmos em um array padrão do JavaScript:
+
+var letras = ['a', 'b', 'c'];
+
+$.each(letras, function() {
+
+     console.log(this);
+});
+No exemplo anterior, passamos dois parâmetro para $.each. O primeiro a lista que desejamos iterar e o segundo a função que será chamada para cada item. A cada chamada this será a, depois, b e depois c.
+
+Veja que each lembra a função forEach que todo array possui:
+
+letras.forEach(function(letra) {
+    console.log(letra);
+});
+Veja que diferente de $.each, o tradicional forEach recebe como parâmetro o elemento que esta iterando e não através de this como em $.each.
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Foreach no jQuery</title>
+</head>
+
+<body>
+	
+	<ul>
+		<li>A</li>
+		<li>B</li>    
+		<li>C</li>
+		<li>D</li>
+		<li>E</li>
+		<li>F</li>
+		
+	</ul>
+
+
+	<script src="js/jquery.js"></script>
+	<script>
+		
+		$('li').each(function() {
+			var texto = $(this).text();
+			console.log(texto);
+		});
+
+		var letras = ['a', 'b', 'c'];
+
+		$.each(letras, function() {
+
+			console.log(this);
+		});
+	</script>
+	
+</body>
+</html>
