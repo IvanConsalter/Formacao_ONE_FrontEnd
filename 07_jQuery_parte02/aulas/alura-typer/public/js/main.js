@@ -11,6 +11,12 @@ $(function(){
 	atualizaPlacar();
 	$('#botao-reiniciar').click(reiniciaJogo);
 
+	$('#usuarios').selectize({
+
+		create: true,
+		sortField: 'text'
+	});
+
 });
 
 function atualizaTamanhoFrase(){
