@@ -70,7 +70,7 @@ function scrollPLacar(){
 
 $('#botao-sync').click(sincronizaPLacar);
 function sincronizaPLacar(){
-
+	
 	var placar = [];
 	var linhas = $('tbody>tr');
 
@@ -95,7 +95,17 @@ function sincronizaPLacar(){
 
 	$.post('http://localhost:3000/placar', dados, function(){
 
-		alert('Placar sincronizado com sucesso');
+		$('.tooltip').tooltipster('open');
+	}).fail(function(){
+
+		$('.tooltip').tooltipster('open').tooltipster('content', 'Falha ao sincronizar');
+	}).always(function(){
+
+		setTimeout(function(){
+
+			$('.tooltip').tooltipster('close');
+		}, 2000);
+		
 	});
 }
 

@@ -17,6 +17,11 @@ $(function(){
 		sortField: 'text'
 	});
 
+	$('.tooltip').tooltipster({
+
+		trigger: 'custom'
+	});
+
 });
 
 function atualizaTamanhoFrase(){
