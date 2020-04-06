@@ -24,7 +24,7 @@ header {
 
 .secao {
 	float: left;
-	width: 33.333%;
+	width: 100%;
 }
 
 .mini {
@@ -43,4 +43,24 @@ header {
 
 .img {
 	max-width: 100%;
+}
+
+@media (min-width: 600px) {
+	html {
+		font-size: 1.125em;
+	}
+
+	.secao {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1000px){
+	html {
+		font-size: 1.25em;
+	}
+
+	.secao {
+		width: 33.333%;
+	}
 }
