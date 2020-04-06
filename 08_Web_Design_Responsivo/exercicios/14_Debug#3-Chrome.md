@@ -1,0 +1,3 @@
+Abra Google Chrome e teste o novo modo responsivo. Abra o Inspector (F12) e clique no botão de emular (canto esquerdo superior, parece um celular).
+
+Navegue na página e teste as opções de tamanho de dispositivo, user-agent, network e mais. Escolha um Device na lista e teste também com suas configurações. Abra o visualizador de media queries (lado esquerdo superior, ícone com 3 traços) e veja como facilitam para encontrar os breakpoints e testá-los.
