@@ -1,0 +1,35 @@
+.menu-abrir,
+.menu-fechar {
+	background-color: none;
+	border: 0;
+	outline: 0;
+	-webkit-appearance: none;
+	font-size: 1.6em;
+	text-indent: -999em;
+}
+
+.menu-abrir {
+	height: 0;
+	width: 0.75em;
+	padding-top: 0.125em;
+	border-top: 0.375em double #000;
+	border-bottom: 0.125em solid #000;
+
+	vertical-align: middle;
+	margin: 0.5em;
+}
+
+.menu-fechar {
+	position: relative;
+	height: 1em;
+	width: 1em;
+	left: 4.6em;
+}
+
+	.menu-fechar:before {
+		content: '\00D7';
+		position: absolute;
+		top: 0;
+		left: 6px;
+		text-indent: 0;
+	}
