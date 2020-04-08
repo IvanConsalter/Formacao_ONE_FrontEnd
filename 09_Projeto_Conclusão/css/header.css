@@ -1,0 +1,28 @@
+.header {
+	background: url(../img/destaque.jpeg) no-repeat;
+	background-size: cover;
+	padding-top: 32px;
+}
+
+.header .main-menu {
+	text-align: center;
+}
+
+.header .main-menu .menu-item {
+	display: inline-block;
+	margin: 0 2px 32px 0;
+}
+
+.header .main-menu .menu-item a {
+	color: #FFF;
+	padding: 16px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 0.5s;
+}
+
+	.header .main-menu .menu-item a:hover {
+		background-color: #48A3A6;
+	}
